@@ -97,13 +97,15 @@ func update_mesh() -> void:
 				set_surface_override_material(material_index, materials[material_name])
 	else:
 		mesh = null
-#		self.update_mesh() # wtf
+		super.update_mesh() # wtf
+	update_static_body()
 
 
 func update_static_body() -> void:
+#	print("update_static_body::", edit_hint)
 	var staticBody = get_node_or_null("StaticBody")
 
-	if (edit_hint >= 2 or static_body) and is_instance_valid(mesh):
+	if (edit_hint >= 2 or static_body or true) and is_instance_valid(mesh):
 		if not is_instance_valid(staticBody):
 			staticBody = StaticBody3D.new()
 			staticBody.set_name("StaticBody")

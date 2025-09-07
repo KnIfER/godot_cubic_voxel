@@ -7,4 +7,5 @@
 
 [node name="Node3D" type="MeshInstance3D" parent="."]
 script = ExtResource("1_a744n")
+VOXELS = {}
 voxel_set = ExtResource("2_74wll")

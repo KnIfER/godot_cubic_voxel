@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://da618ha8vnh2q"]
 
 [ext_resource type="Script" path="res://ProceduralWorld.gd" id="1_0x2wy"]
-[ext_resource type="Script" path="res://Camera.gd" id="2_8y6l8"]
+[ext_resource type="PackedScene" uid="uid://f6kx848g5bco" path="res://FPSController/FPSController.tscn" id="3_4gp6r"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f3dmy"]
 
@@ -11,18 +11,20 @@ sky_material = SubResource("ProceduralSkyMaterial_f3dmy")
 [sub_resource type="Environment" id="Environment_bqs3o"]
 background_mode = 2
 sky = SubResource("Sky_dqspa")
+ambient_light_source = 3
+reflected_light_source = 2
 ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+fog_light_energy = 0.2
+fog_density = 0.0001
 
 [node name="ProceduralWorld" type="Node3D"]
 script = ExtResource("1_0x2wy")
 frequency = 2.0
 amplitude = 3.0
-marker_path = NodePath("Camera")
-
-[node name="Camera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 17, 7)
-script = ExtResource("2_8y6l8")
-speed = 25.0
+marker_path = NodePath("CharacterBody3D")
 
 [node name="Chunks" type="Node3D" parent="."]
 
@@ -31,3 +33,6 @@ environment = SubResource("Environment_bqs3o")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(1, 0, 0, 0, 0.568045, 0.822998, 0, -0.822998, 0.568045, 0, 0, 0)
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("3_4gp6r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17, 7)
