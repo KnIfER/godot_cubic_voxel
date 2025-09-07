@@ -130,7 +130,7 @@ func _generate_chunk(chunk : Vector3) -> void:
 		return
 	
 	var chunk_node := VoxelMeshInstance3D.new()
-#	chunk_node.uv_map = true
+	chunk_node.uv_map = true
 	chunk_node.voxel_set = voxel_set
 	
 	var spawn_points := []

@@ -19,7 +19,7 @@ signal requested_refresh
 @export var tiles : Texture = null : set =  set_tiles
 
 # Materials used by voxels (Array, Material)
-@export var materials := [
+@export var materials :Array[Material]= [
 	StandardMaterial3D.new(),
 ] : set =  set_materials
 
@@ -45,9 +45,16 @@ func _get(property : StringName):
 
 func _set(property : StringName, value) -> bool:
 	if property == "VOXELS":
+		print("_set::", property, value)
 		if typeof(value) == TYPE_DICTIONARY:
 			for key in value:
 				printt('value[key]::', value[key]);
+				if value[key] is RefCounted: # wtf
+					var ref:RefCounted=value[key]
+					var sc:= ref.get_script()
+					printt(' ref::',sc.resource_path, ref.get_class());
+					
+#				if value[key] is Dictionary: # wtf
 				var voxel : Dictionary = value[key]
 				if voxel.has("vsn"):
 					Voxel.set_name(voxel, voxel["vsn"])
@@ -211,9 +218,11 @@ func erase_voxels() -> void:
 # Should be called when noticable changes have been committed to voxels.
 # Emits requested_refresh, calculates _uv_scale and updates _uv_ready
 func request_refresh() -> void:
+	print("request_refresh::", request_refresh)
 	_uv_ready = is_instance_valid(tiles)
 	if _uv_ready:
-		_uv_scale = Vector2.ONE / (tiles.get_size() / tile_size)
+		var sz :Vector2i= tiles.get_size()
+		_uv_scale = Vector2.ONE / ( Vector2(sz.x, sz.y) / tile_size)
 	else:
 		_uv_scale = Vector2.ONE
 	emit_signal("requested_refresh")

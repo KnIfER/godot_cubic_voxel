@@ -7,7 +7,7 @@ class_name VoxelObject
 
 ## Signals
 # Emitted when VoxelSet is changed
-signal on_set_voxel_set(voxel_set)
+signal set_voxel_set(voxel_set)
 
 
 
@@ -42,7 +42,7 @@ enum MeshModes {
 
 # The VoxelSet for this VoxelObject
 #(Resource)
-@export var voxel_set:Resource = null : set =  set_voxel_set
+@export var voxel_set:Resource = null : set =  set_voxel_set_fun
 
 
 
@@ -94,7 +94,7 @@ func set_static_body(value : bool) -> void:
 
 
 # Sets voxel_set, calls update_mesh if needed and not told otherwise
-func set_voxel_set(value : Resource) -> void:
+func set_voxel_set_fun(value : Resource) -> void:
 	if not (typeof(value) == TYPE_NIL or value is VoxelSet):
 		printerr("Invalid Resource given expected VoxelSet")
 		return
@@ -110,7 +110,7 @@ func set_voxel_set(value : Resource) -> void:
 
 	if is_inside_tree():
 		update_mesh()
-	emit_signal("on_set_voxel_set", voxel_set)
+	emit_signal("set_voxel_set", voxel_set)
 
 
 # Return true if no voxels are present
@@ -412,6 +412,7 @@ func naive_volume(volume : Array, vt : VoxelTool = null) -> ArrayMesh:
 	for position in volume:
 		for direction in Voxel.Faces:
 			if get_voxel_id(position + direction) == -1:
+#				print("get_voxel::", get_voxel(position))
 				vt.add_face(get_voxel(position), direction, position)
 
 	return vt.commit()

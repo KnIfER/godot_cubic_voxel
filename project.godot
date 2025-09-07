@@ -14,9 +14,6 @@ config/name="Voxel-Core"
 config/description="Voxel plugin for the Godot game engine!"
 run/main_scene="res://procedural_world.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
-boot_splash/bg_color=Color(1, 1, 1, 1)
-boot_splash/image="res://images/voxel-core.splash.png"
-config/icon="res://images/voxel-core.png"
 
 [autoload]
 

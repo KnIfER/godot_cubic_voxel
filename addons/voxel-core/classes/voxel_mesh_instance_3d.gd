@@ -97,7 +97,7 @@ func update_mesh() -> void:
 				set_surface_override_material(material_index, materials[material_name])
 	else:
 		mesh = null
-		self.update_mesh() # wtf
+#		self.update_mesh() # wtf
 
 
 func update_static_body() -> void:

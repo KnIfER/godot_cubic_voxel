@@ -1,6 +1,6 @@
 @tool
 class_name Voxel
-extends RefCounted
+extends Object
 # Utility class containing various helpful static values and methods that have 
 # to do with voxels.
 #
@@ -157,6 +157,7 @@ static func has_face_uv(voxel : Dictionary, face : Vector3) -> bool:
 
 # Returns the defined uv at given face if present, otherwise returns uv
 static func get_face_uv(voxel : Dictionary, face : Vector3) -> Vector2:
+#	print("get_face_uv::", voxel.has("uvs"), voxel)
 	return voxel["uvs"].get(face, get_uv(voxel)) if voxel.has("uvs") else get_uv(voxel)
 
 

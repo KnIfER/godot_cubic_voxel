@@ -131,6 +131,7 @@ func add_face(
 		if surface.material is StandardMaterial3D:
 			surface.material.vertex_color_use_as_albedo = true
 			surface.material.vertex_color_is_srgb = true
+#			print("albedo_texture::", _uv_voxels, _voxel_set.tiles)
 			if uv_surface:
 				surface.material.albedo_texture = _voxel_set.tiles
 		
@@ -143,90 +144,90 @@ func add_face(
 	match face:
 		Vector3.RIGHT:
 			if uv_surface:
-				surface.surface_tool.add_uv((uv + Vector2.RIGHT) * _voxel_set.uv_scale())
-			surface.surface_tool.add_vertex((top_left + Vector3.RIGHT + Vector3.UP) * _voxel_size)
+				st.set_uv((uv + Vector2.RIGHT) * _voxel_set.uv_scale())
+			st.add_vertex((top_left + Vector3.RIGHT + Vector3.UP) * _voxel_size)
 			if uv_surface:
-				surface.surface_tool.add_uv((uv + Vector2.ONE) * _voxel_set.uv_scale())
-			surface.surface_tool.add_vertex((bottom_left + Vector3.RIGHT) * _voxel_size)
+				st.set_uv((uv + Vector2.ONE) * _voxel_set.uv_scale())
+			st.add_vertex((bottom_left + Vector3.RIGHT) * _voxel_size)
 			if uv_surface:
-				surface.surface_tool.add_uv((uv) * _voxel_set.uv_scale())
-			surface.surface_tool.add_vertex((top_right + Vector3.ONE) * _voxel_size)
+				st.set_uv((uv) * _voxel_set.uv_scale())
+			st.add_vertex((top_right + Vector3.ONE) * _voxel_size)
 			if uv_surface:
-				surface.surface_tool.add_uv((uv + Vector2.DOWN) * _voxel_set.uv_scale())
-			surface.surface_tool.add_vertex((bottom_right + Vector3.RIGHT + Vector3.BACK) * _voxel_size)
+				st.set_uv((uv + Vector2.DOWN) * _voxel_set.uv_scale())
+			st.add_vertex((bottom_right + Vector3.RIGHT + Vector3.BACK) * _voxel_size)
 		Vector3.LEFT:
 			if uv_surface:
-				surface.surface_tool.add_uv((uv + Vector2.DOWN) * _voxel_set.uv_scale())
-			surface.surface_tool.add_vertex((bottom_left) * _voxel_size)
+				st.set_uv((uv + Vector2.DOWN) * _voxel_set.uv_scale())
+			st.add_vertex((bottom_left) * _voxel_size)
 			if uv_surface:
-				surface.surface_tool.add_uv((uv) * _voxel_set.uv_scale())
-			surface.surface_tool.add_vertex((top_left + Vector3.UP) * _voxel_size)
+				st.set_uv((uv) * _voxel_set.uv_scale())
+			st.add_vertex((top_left + Vector3.UP) * _voxel_size)
 			if uv_surface:
-				surface.surface_tool.add_uv((uv + Vector2.ONE) * _voxel_set.uv_scale())
-			surface.surface_tool.add_vertex((bottom_right + Vector3.BACK) * _voxel_size)
+				st.set_uv((uv + Vector2.ONE) * _voxel_set.uv_scale())
+			st.add_vertex((bottom_right + Vector3.BACK) * _voxel_size)
 			if uv_surface:
-				surface.surface_tool.add_uv((uv + Vector2.RIGHT) * _voxel_set.uv_scale())
-			surface.surface_tool.add_vertex((top_right + Vector3.UP + Vector3.BACK) * _voxel_size)
+				st.set_uv((uv + Vector2.RIGHT) * _voxel_set.uv_scale())
+			st.add_vertex((top_right + Vector3.UP + Vector3.BACK) * _voxel_size)
 		Vector3.UP:
 			if uv_surface:
-				surface.surface_tool.add_uv((uv + Vector2.DOWN) * _voxel_set.uv_scale())
-			surface.surface_tool.add_vertex((top_left + Vector3.UP + Vector3.BACK) *_voxel_size)
+				st.set_uv((uv + Vector2.DOWN) * _voxel_set.uv_scale())
+			st.add_vertex((top_left + Vector3.UP + Vector3.BACK) *_voxel_size)
 			if uv_surface:
-				surface.surface_tool.add_uv((uv) * _voxel_set.uv_scale())
-			surface.surface_tool.add_vertex((bottom_left + Vector3.UP) * _voxel_size)
+				st.set_uv((uv) * _voxel_set.uv_scale())
+			st.add_vertex((bottom_left + Vector3.UP) * _voxel_size)
 			if uv_surface:
-				surface.surface_tool.add_uv((uv + Vector2.ONE) * _voxel_set.uv_scale())
-			surface.surface_tool.add_vertex((top_right + Vector3.ONE) * _voxel_size)
+				st.set_uv((uv + Vector2.ONE) * _voxel_set.uv_scale())
+			st.add_vertex((top_right + Vector3.ONE) * _voxel_size)
 			if uv_surface:
-				surface.surface_tool.add_uv((uv + Vector2.RIGHT) * _voxel_set.uv_scale())
-			surface.surface_tool.add_vertex((bottom_right + Vector3.RIGHT + Vector3.UP) * _voxel_size)
+				st.set_uv((uv + Vector2.RIGHT) * _voxel_set.uv_scale())
+			st.add_vertex((bottom_right + Vector3.RIGHT + Vector3.UP) * _voxel_size)
 		Vector3.DOWN:
 			if uv_surface:
-				surface.surface_tool.add_uv((uv + Vector2.DOWN) * _voxel_set.uv_scale())
-			surface.surface_tool.add_vertex((top_right + Vector3.RIGHT + Vector3.BACK) * _voxel_size)
+				st.set_uv((uv + Vector2.DOWN) * _voxel_set.uv_scale())
+			st.add_vertex((top_right + Vector3.RIGHT + Vector3.BACK) * _voxel_size)
 			if uv_surface:
-				surface.surface_tool.add_uv((uv) * _voxel_set.uv_scale())
-			surface.surface_tool.add_vertex((bottom_right + Vector3.RIGHT) * _voxel_size)
+				st.set_uv((uv) * _voxel_set.uv_scale())
+			st.add_vertex((bottom_right + Vector3.RIGHT) * _voxel_size)
 			if uv_surface:
-				surface.surface_tool.add_uv((uv + Vector2.ONE) * _voxel_set.uv_scale())
-			surface.surface_tool.add_vertex((top_left + Vector3.BACK) * _voxel_size)
+				st.set_uv((uv + Vector2.ONE) * _voxel_set.uv_scale())
+			st.add_vertex((top_left + Vector3.BACK) * _voxel_size)
 			if uv_surface:
-				surface.surface_tool.add_uv((uv + Vector2.RIGHT) * _voxel_set.uv_scale())
-			surface.surface_tool.add_vertex((bottom_left) * _voxel_size)
+				st.set_uv((uv + Vector2.RIGHT) * _voxel_set.uv_scale())
+			st.add_vertex((bottom_left) * _voxel_size)
 		Vector3.FORWARD:
 			if uv_surface:
-				surface.surface_tool.add_uv((uv + Vector2.ONE) * _voxel_set.uv_scale())
-			surface.surface_tool.add_vertex((bottom_right + Vector3.RIGHT) * _voxel_size)
+				st.set_uv((uv + Vector2.ONE) * _voxel_set.uv_scale())
+			st.add_vertex((bottom_right + Vector3.RIGHT) * _voxel_size)
 			if uv_surface:
-				surface.surface_tool.add_uv((uv + Vector2.RIGHT) * _voxel_set.uv_scale())
-			surface.surface_tool.add_vertex((top_right + Vector3.RIGHT + Vector3.UP) * _voxel_size)
+				st.set_uv((uv + Vector2.RIGHT) * _voxel_set.uv_scale())
+			st.add_vertex((top_right + Vector3.RIGHT + Vector3.UP) * _voxel_size)
 			if uv_surface:
-				surface.surface_tool.add_uv((uv + Vector2.DOWN) * _voxel_set.uv_scale())
-			surface.surface_tool.add_vertex((bottom_left) * _voxel_size)
+				st.set_uv((uv + Vector2.DOWN) * _voxel_set.uv_scale())
+			st.add_vertex((bottom_left) * _voxel_size)
 			if uv_surface:
-				surface.surface_tool.add_uv((uv) * _voxel_set.uv_scale())
-			surface.surface_tool.add_vertex((top_left + Vector3.UP) * _voxel_size)
+				st.set_uv((uv) * _voxel_set.uv_scale())
+			st.add_vertex((top_left + Vector3.UP) * _voxel_size)
 		Vector3.BACK:
 			if uv_surface:
-				surface.surface_tool.add_uv((uv + Vector2.RIGHT) * _voxel_set.uv_scale())
-			surface.surface_tool.add_vertex((top_right + Vector3.ONE) * _voxel_size)
+				st.set_uv((uv + Vector2.RIGHT) * _voxel_set.uv_scale())
+			st.add_vertex((top_right + Vector3.ONE) * _voxel_size)
 			if uv_surface:
-				surface.surface_tool.add_uv((uv + Vector2.ONE) * _voxel_set.uv_scale())
-			surface.surface_tool.add_vertex((bottom_right + Vector3.RIGHT + Vector3.BACK) * _voxel_size)
+				st.set_uv((uv + Vector2.ONE) * _voxel_set.uv_scale())
+			st.add_vertex((bottom_right + Vector3.RIGHT + Vector3.BACK) * _voxel_size)
 			if uv_surface:
-				surface.surface_tool.add_uv((uv) * _voxel_set.uv_scale())
-			surface.surface_tool.add_vertex((top_left + Vector3.UP + Vector3.BACK) * _voxel_size)
+				st.set_uv((uv) * _voxel_set.uv_scale())
+			st.add_vertex((top_left + Vector3.UP + Vector3.BACK) * _voxel_size)
 			if uv_surface:
-				surface.surface_tool.add_uv((uv + Vector2.DOWN) * _voxel_set.uv_scale())
-			surface.surface_tool.add_vertex((bottom_left + Vector3.BACK) * _voxel_size)
+				st.set_uv((uv + Vector2.DOWN) * _voxel_set.uv_scale())
+			st.add_vertex((bottom_left + Vector3.BACK) * _voxel_size)
 	
 	surface.index += 4
-	surface.surface_tool.add_index(surface.index - 4)
-	surface.surface_tool.add_index(surface.index - 3)
-	surface.surface_tool.add_index(surface.index - 2)
-	surface.surface_tool.add_index(surface.index - 3)
-	surface.surface_tool.add_index(surface.index - 1)
-	surface.surface_tool.add_index(surface.index - 2)
+	st.add_index(surface.index - 4)
+	st.add_index(surface.index - 3)
+	st.add_index(surface.index - 2)
+	st.add_index(surface.index - 3)
+	st.add_index(surface.index - 1)
+	st.add_index(surface.index - 2)
 
 
 # Adds all the faces of a voxel to Mesh at given position and with voxel data
