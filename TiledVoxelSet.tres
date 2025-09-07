@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="VoxelSet" load_steps=2 format=3 uid="uid://hqthv7sru3sv"]
+
+[ext_resource type="Script" path="res://addons/voxel-core/classes/voxel_set.gd" id="1_o2cd6"]
+
+[resource]
+script = ExtResource("1_o2cd6")
+tile_size = Vector2i(32, 32)
+materials = Array[BaseMaterial3D]([])
+VOXELS = {
+0: Object(RefCounted,"script":Resource("res://addons/voxel-core/classes/voxel/voxel.gd"))
+,
+1: Object(RefCounted,"script":Resource("res://addons/voxel-core/classes/voxel/voxel.gd"))
+,
+2: Object(RefCounted,"script":Resource("res://addons/voxel-core/classes/voxel/voxel.gd"))
+,
+3: Object(RefCounted,"script":Resource("res://addons/voxel-core/classes/voxel/voxel.gd"))
+,
+4: Object(RefCounted,"script":Resource("res://addons/voxel-core/classes/voxel/voxel.gd"))
+,
+5: Object(RefCounted,"script":Resource("res://addons/voxel-core/classes/voxel/voxel.gd"))
+,
+6: Object(RefCounted,"script":Resource("res://addons/voxel-core/classes/voxel/voxel.gd"))
+,
+7: Object(RefCounted,"script":Resource("res://addons/voxel-core/classes/voxel/voxel.gd"))
+,
+8: Object(RefCounted,"script":Resource("res://addons/voxel-core/classes/voxel/voxel.gd"))
+,
+9: Object(RefCounted,"script":Resource("res://addons/voxel-core/classes/voxel/voxel.gd"))
+,
+10: Object(RefCounted,"script":Resource("res://addons/voxel-core/classes/voxel/voxel.gd"))
+
+}

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5mr2pvr7n8cv"]
+
+[ext_resource type="Script" path="res://addons/voxel-core/classes/voxel_mesh_instance_3d.gd" id="1_a744n"]
+[ext_resource type="Resource" uid="uid://hqthv7sru3sv" path="res://TiledVoxelSet.tres" id="2_74wll"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Node3D" type="MeshInstance3D" parent="."]
+script = ExtResource("1_a744n")
+voxel_set = ExtResource("2_74wll")

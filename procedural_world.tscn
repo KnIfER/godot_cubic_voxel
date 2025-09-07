@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://da618ha8vnh2q"]
+
+[ext_resource type="Script" path="res://ProceduralWorld.gd" id="1_0x2wy"]
+[ext_resource type="Script" path="res://Camera.gd" id="2_8y6l8"]
+
+[node name="ProceduralWorld" type="Node3D"]
+script = ExtResource("1_0x2wy")
+frequency = 2.0
+amplitude = 3.0
+marker_path = NodePath("Camera")
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 17, 7)
+script = ExtResource("2_8y6l8")
+speed = 25.0
+
+[node name="Chunks" type="Node3D" parent="."]
