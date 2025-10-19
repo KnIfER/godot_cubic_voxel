@@ -11,7 +11,10 @@ Perhaps it is possible to use version 3.5 as a designer :
 
 
 
-<img width="1013" height="489" alt="image" src="https://github.com/user-attachments/assets/c1be7ab1-0c54-45e6-95da-3738b73a32b8" />
+<img width="1592" height="780" alt="image" src="https://github.com/user-attachments/assets/71960e94-f2d8-4dec-a773-a60a5578cef7" />
+
+<img width="1599" height="640" alt="image" src="https://github.com/user-attachments/assets/2e2cca58-d8e9-430c-93b6-04b1968682cf" />
+
 
 
 <h1 align="center">
